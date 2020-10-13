@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Boa tarde, </p>
+
+    <p>Você tem uma gravação da Vox Mundi dia <b> <%= @register.formatted_date.to_datetime.strftime("%d/%m") %>. </b></p>
+    <p>Seguem anexos os <b>roteiros</b> para a gravação.</p>
+    
+    <p>O técnico irá enviar o link, que, necessariamente, precisa ser aberto pelo Google Chrome. Pedimos, por favor, que esteja pronto <b style="color: red">5 minutos antes</b> da hora marcada, com:</p>
+    
+    <ul style="font-weight: bold;">
+      <li> Computador ligado </li>
+      <li> Cabo de rede e microfone conectados </li>
+      <li> Textos localizados e baixados </li>
+    </ul>
+    
+    <p>Isso nos ajuda a agilizar o trabalho.</p> 
+    <p>Na maioria das vezes usamos o <b>Team Viewer</b> para ajudar nas configurações.</p>
+    <p>Se você puder, por favor, baixe o programa. O Team Viewer é gratuito e você encontra no próprio site do software. </p>
+    
+    <p>
+      <%= @register.time%> <%= @register.voice_actor %> - 
+      <%= @register.phone %> - <%= @register.email %>
+    </p>    
+     
+    <p>Obrigada e boa gravação (:</p>
+  </body>
+</html>

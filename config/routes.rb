@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root "vox_mails#index"
+  post "/anexos", to: "vox_mails#attachments", as: :attachments
 end
