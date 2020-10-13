@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2020_10_13_220523) do
   create_table "dubbings", force: :cascade do |t|
     t.integer "studio_id"
     t.integer "producer_id"
+    t.integer "voice_actor_id"
     t.string "date"
     t.string "time"
     t.datetime "created_at", null: false

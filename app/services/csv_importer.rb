@@ -18,10 +18,13 @@ class CsvImporter
       register[:time] = row[4]
       register[:date] = row[5]
       register[:formatted_date] = build_date(register[:date]) if register[:date].present?
-      registers << register unless register.values.uniq.include? nil
+      unless register.values.uniq.include? nil
+        registers << register
+      else
+        Rails.logger.info "[CSVImporter] Erro ao criar registro: #{register[:voice_actor]}"
+      end
     end
     Rails.logger.info "[CSVImporter] Finishing Import."
-    byebug
     registers
   end
 

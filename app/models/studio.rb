@@ -1,4 +1,7 @@
 class Studio < ApplicationRecord
-  belongs_to :director, class_name: "User"
+  before_save { self.name.upcase! }
 
+  validates :name, presence: true
+
+  has_many :dubbings
 end

@@ -7,6 +7,8 @@ class VoxMailsController < ApplicationController
   def attachments
     if params[:csv_file].present?
       registers = CsvImporter.execute(params[:csv_file].tempfile)
+      CreateDubbings.new(registers).call
+      byebug
       # send_multiple_emails(registers)
     else
       redirect_to root_path, notice: "Emails sendo enviados."
