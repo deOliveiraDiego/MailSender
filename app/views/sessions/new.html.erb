@@ -1,0 +1,6 @@
+<h2>Insira seu email da Vox aqui.</h2>
+<%= form_tag(create_session_path, method: :post) do %>
+  <%= label_tag(:email, "Email:") %>
+  <%= email_field(:session, :email) %>
+  <%= submit_tag("Login") %>
+<% end %>

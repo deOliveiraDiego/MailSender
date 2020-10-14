@@ -1,5 +1,4 @@
 class CreateDubbings
-  PRODUCER_ID = 1
   def initialize(registers)
     @registers = registers
   end
@@ -14,11 +13,10 @@ class CreateDubbings
     studio = get_studio(register.studio)
     byebug
     dubbing = Dubbing.create(studio_id: studio.id,
-                producer_id: PRODUCER_ID,
+                producer_id: current_user.id,
                 voice_actor_id: voice_actor.id,
                 date: register.date,
                 time: register.time)
-    dubbing
   end
 
   def get_voice_actor(register)
