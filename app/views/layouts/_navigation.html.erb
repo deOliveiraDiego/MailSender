@@ -1,0 +1,9 @@
+<nav>
+  <%= link_to 'Vox Mails', root_path %>
+  <div>
+    <% if logged_in? %>
+      <%= link_to 'Sair', logout_path, method: :delete %>
+      <%= current_user.name %>
+    <% end %>
+  </div>
+</nav>
